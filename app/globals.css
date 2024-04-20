@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("overlayscrollbars/overlayscrollbars.css");
+
+.os-theme-dark,
+.os-theme-light {
+  --os-size: 16px !important;
+  --os-padding-perpendicular: 2px !important;
+  --os-handle-border-radius: 0px !important;
+  /* ------------------------------------------- */
+  --os-handle-bg: hsla(0, 0%, 100%, 0.3) !important;
+  --os-handle-bg-hover: hsla(0, 0%, 100%, 0.5) !important;
+  --os-handle-bg-active: hsla(0, 0%, 100%, 0.7) !important;
+}
+
+.os-scrollbar-vertical {
+  z-index: 1;
+}
+
+@layer base {
+  html {
+    scrollbar-color: hsla(0, 0%, 100%, 0.3) transparent;
+    scrollbar-width: auto;
+    --fallback-fonts: Helvetica Neue, helvetica, arial, Hiragino Kaku Gothic ProN, Meiryo, MS Gothic;
+  }
+
+  ::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 100%, 0.3);
+  }
+
+  body {
+    @apply bg-cod-gray text-gray-70 flex flex-col h-screen w-full;
+    @apply md:min-h-[600px] md:min-w-[800px] leading-none [scrollbar-width:none];
+  }
+
+  svg {
+    pointer-events: none;
+  }
+}
+
+.main-layout {
+  @apply bg-black grid auto-rows-[1fr_auto] w-full overflow-hidden;
+  @apply md:gap-2 md:p-2 md:h-full md:min-h-full;
+}
+
+.main-layout:has(footer:not(:empty)) {
+  @apply h-[calc(100%-var(--playing-bar-height))];
+}
+
+.layout-container {
+  @apply relative grid md:grid-cols-[auto_1fr] md:gap-2 overflow-hidden;
+}
+
+.content-spacing {
+  @apply m-0 py-0 px-[var(--content-spacing)] max-w-[var(--content-max-width)];
+}
+
+.notistack-SnackbarContainer {
+  @apply !absolute [@media(min-width:340px)]:!max-w-[288px] !max-w-[95vw] !w-full;
+}
+
+[data-radix-popper-content-wrapper] {
+  @apply max-md:!z-[100];
+}
