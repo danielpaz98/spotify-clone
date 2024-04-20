@@ -1,0 +1,98 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "tsconfigRootDir": ".",
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": ["react", "import", "@typescript-eslint"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "prettier/prettier": [
+      "warn",
+      {
+        "printWidth": 110,
+        "trailingComma": "all",
+        "tabWidth": 2,
+        "semi": true,
+        "singleQuote": false,
+        "arrowParens": "always",
+        "endOfLine": "auto"
+      }
+    ],
+    "object-shorthand": "error",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "linebreak-style": "off",
+    "prefer-const": "warn",
+    "no-dupe-keys": "warn",
+    "array-callback-return": "warn",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/self-closing-comp": "warn",
+    "react/no-unknown-property": ["warn", { "ignore": ["css"] }],
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "import/no-named-as-default": "off",
+    // "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "off" }],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "args": "after-used",
+        "ignoreRestSiblings": false,
+        "argsIgnorePattern": "^_.*?$"
+      }
+    ],
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": {
+          "attributes": false
+        }
+      }
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": true
+      }
+    ]
+  }
+}
