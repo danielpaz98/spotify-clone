@@ -26,7 +26,7 @@
 	<img src="public/github-images/overview-desktop-1.jpg">
 	<br/>
 	<br/>
-	<img src="public/github-images/overview-desktop-1.jpg">
+	<img src="public/github-images/overview-desktop-2.jpg">
 </div>
 
 <h1 align="center">Mobile</h1>
@@ -35,7 +35,7 @@
 	<img src="public/github-images/overview-mobile-1.png">
 	<br/>
 	<br/>
-	<img src="public/github-images/overview-mobile-1.png">
+	<img src="public/github-images/overview-mobile-2.png">
 </div>
 
 ## How To Use
