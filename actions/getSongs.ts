@@ -13,7 +13,7 @@ export default async function getSongs(): Promise<Song[] | null> {
 
   let query = supabase.from("songs").select("*, liked_songs(*)").order("created_at", { ascending: false });
 
-  if (session?.user.id) query = query.eq("user_id", session?.user.id);
+  if (session?.user.id) query = query.eq("liked_songs.user_id", session?.user.id);
 
   const { data: dataQuery, error } = await query;
 
