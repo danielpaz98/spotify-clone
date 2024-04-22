@@ -6,8 +6,7 @@ import Image from "next/image";
 import { getUserSession, getLikedSongs } from "@/actions";
 // COMPONENTS
 import { LikedContent } from "./components";
-import { ProfilePicture } from "@/components";
-import PageBanner from "@/components/PageBanner";
+import { ProfilePicture, PageBanner } from "@/components";
 // IMAGES
 import LikedSongsImage from "@/images/liked-songs.png";
 

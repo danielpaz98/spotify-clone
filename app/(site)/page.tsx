@@ -3,8 +3,8 @@ import { metadata as layoutMetadata } from "@/app/layout";
 // ACTIONS
 import { getSongs } from "@/actions";
 // COMPONENTS
+import { PageHeader } from "@/components";
 import { PageContent } from "./components";
-import PageHeader from "@/components/PageHeader";
 
 export const metadata = {
   title: "Web Player: Music for everyone",

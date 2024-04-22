@@ -6,9 +6,11 @@ import { cn } from "@/utils";
 // CONTEXTS
 import { PageBannerContext } from "./PageBanner";
 // COMPONENTS
-import PageHeader, { Props as PageHeaderProps } from "@/components/PageHeader";
+import { PageHeader } from "@/components";
 
-export default function PageBannerHeader({ className, children, ...restProps }: PageHeaderProps) {
+type Props = React.ComponentPropsWithRef<typeof PageHeader>;
+
+export default function PageBannerHeader({ className, children, ...restProps }: Props) {
   const classNames = cn("[transition:background-color_.25s,ease-out]", className);
   const { opacity } = useContext(PageBannerContext);
 

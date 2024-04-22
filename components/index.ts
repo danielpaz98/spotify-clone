@@ -5,6 +5,8 @@ export { default as LikeButton } from "./LikeButton";
 export { default as Link } from "./Link";
 export { default as MediaItem } from "./MediaItem";
 export { default as OverlayScrollbars } from "./OverlayScrollbars";
+export { default as PageBanner } from "./PageBanner";
+export { default as PageHeader } from "./PageHeader";
 export { default as PlayButton } from "./PlayButton";
 export { default as PlayingBar } from "./Footer/PlayingBar";
 export { default as ProfilePicture } from "./ProfilePicture";

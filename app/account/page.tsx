@@ -1,8 +1,8 @@
 // LAYOUT METADATA
 import { metadata as layoutMetadata } from "@/app/layout";
 // COMPONENTS
+import { PageHeader } from "@/components";
 import { AccountContent } from "./components";
-import PageHeader from "@/components/PageHeader";
 
 export const metadata = {
   title: "Web Player: Music for everyone",

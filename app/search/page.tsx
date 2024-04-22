@@ -3,9 +3,8 @@ import { metadata as layoutMetadata } from "@/app/layout";
 // ACTIONS
 import { getSongsByTitle } from "@/actions";
 // COMPONENTS
-import { SearchBar } from "@/components";
+import { SearchBar, PageHeader } from "@/components";
 import { SearchContent } from "./components";
-import PageHeader from "@/components/PageHeader";
 
 export const metadata = {
   title: "Search",
