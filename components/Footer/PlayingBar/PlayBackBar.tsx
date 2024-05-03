@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 // UTILS
 import { cn, formatTime } from "@/utils";
 // COMPONENTS
@@ -16,7 +16,6 @@ export default function PlayBackBar({ className, onEnd }: Props) {
   const textClassNames = /* tw */ "min-w-[40px] text-[#a7a7a7] mb-[-2px] text-xs font-light";
 
   const { isReady, getPosition, seek, duration } = usePlayer();
-  const frameRef = useRef<number>();
   const [position, setPosition] = useState(0);
   const [isSeeking, setIsSeeking] = useState(false);
 
@@ -34,20 +33,13 @@ export default function PlayBackBar({ className, onEnd }: Props) {
   };
 
   useEffect(() => {
-    const animate = () => {
+    const animate = window.setInterval(() => {
       if (isSeeking) return;
 
       setPosition(getPosition());
-      frameRef.current = window.requestAnimationFrame(animate);
-    };
+    });
 
-    frameRef.current = window.requestAnimationFrame(animate);
-
-    return () => {
-      if (frameRef.current) {
-        window.cancelAnimationFrame(frameRef.current);
-      }
-    };
+    return () => window.clearInterval(animate);
   }, [getPosition, isSeeking]);
 
   useEffect(() => {
