@@ -13,13 +13,19 @@ type CanGoBackForward = Pick<State, "canGoForwardLength">;
 type Actions = {
   setCanGoBackLength: Dispatch<Setter<State["canGoBackLength"]>>;
   setCanGoBackForward: Dispatch<Setter<State["canGoForwardLength"]>>;
+  reset: () => void;
+};
+
+const initalState: State = {
+  canGoBackLength: 1,
+  canGoForwardLength: 1,
 };
 
 const useSidebarNavigation = create<State & Actions>((set, get) => ({
-  canGoBackLength: 1,
-  canGoForwardLength: 1,
+  ...initalState,
   setCanGoBackLength: createSetter<CanGoBackLength>(set, get, "canGoBackLength"),
   setCanGoBackForward: createSetter<CanGoBackForward>(set, get, "canGoForwardLength"),
+  reset: () => set(initalState),
 }));
 
 export default useSidebarNavigation;
