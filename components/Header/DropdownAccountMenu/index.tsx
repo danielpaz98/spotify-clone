@@ -18,6 +18,8 @@ import ExternalLinkIcon from "@/icons/external-link.svg";
 // HOOKS
 import { useAuth } from "@/contexts/AuthContext/hooks";
 import { usePlayer } from "@/hooks";
+// STORES
+import { useSidebarNavigation } from "@/store";
 
 type Menu = {
   href: string;
@@ -37,10 +39,12 @@ export default function DropdownAccountMenu({ user, menu: menuProp, className, .
     "hover:bg-dark-gray hover:text-white",
   );
 
+  const { session } = useAuth();
+
   const router = useRouter();
   const player = usePlayer();
   const pathname = usePathname();
-  const { session } = useAuth();
+  const sideberNavigation = useSidebarNavigation();
 
   const subscription = session?.user?.subscription;
 
@@ -58,6 +62,7 @@ export default function DropdownAccountMenu({ user, menu: menuProp, className, .
       router.push("/");
       router.refresh();
       player.reset();
+      sideberNavigation.reset();
 
       enqueueSnackbar("Logged out", { variant: "success" });
     }
