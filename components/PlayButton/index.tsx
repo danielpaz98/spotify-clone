@@ -25,7 +25,7 @@ const PlayButton = forwardRef<React.ElementRef<typeof Button>, Props>(
         type="button"
         variant={variant}
       >
-        {children ? children : <Icon className="w-6 h-6" fill="black" />}
+        {children ? children : <Icon className="h-6 w-6" fill="black" />}
       </Button>
     );
   },

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 // PLUGINS
@@ -15,7 +13,6 @@ import type { TablesInsert } from "@/models";
 type Price = TablesInsert<"prices">;
 
 export async function POST(request: Request) {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { price }: { price: Price } = await request.json();
 
   try {

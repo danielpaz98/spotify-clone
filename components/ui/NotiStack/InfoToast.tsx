@@ -24,11 +24,11 @@ const InfoToast = forwardRef<HTMLDivElement, Props>(({ className, message, image
       onClick={() => closeSnackbar(id)}
     >
       {imageUrl && (
-        <picture className="block w-6 h-6 rounded-[2px] bg-dire-wolf flex-shrink-0 overflow-hidden">
+        <picture className="block h-6 w-6 flex-shrink-0 overflow-hidden rounded-[2px] bg-dire-wolf">
           <img
             aria-hidden
             alt={(typeof message === "string" && message) || ""}
-            className="w-full h-full object-cover object-center"
+            className="h-full w-full object-cover object-center"
             loading="lazy"
             src={imageUrl}
           />

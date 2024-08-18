@@ -73,7 +73,7 @@ export default function DropdownAccountMenu({ user, menu: menuProp, className, .
       <DropdownMenu.Trigger asChild>
         <Button
           rounded
-          className="relative flex-shrink-0 p-0 w-8 h-8"
+          className="relative h-8 w-8 flex-shrink-0 p-0"
           data-tooltip-id="account-username"
           size="sm"
           type="button"
@@ -107,7 +107,7 @@ export default function DropdownAccountMenu({ user, menu: menuProp, className, .
                   {...(item.externalLink && { target: "_blank" })}
                 >
                   <span className="flex-1 text-ellipsis">{item.text}</span>
-                  {item.externalLink && <ExternalLinkIcon className="w-4 h-4" fill="currentColor" />}
+                  {item.externalLink && <ExternalLinkIcon className="h-4 w-4" fill="currentColor" />}
                 </Link>
               </li>
             </DropdownMenu.Item>

@@ -56,7 +56,7 @@ export default function TopBarNavigation({ className }: Props) {
         variant="dark"
         onClick={handleGoBack}
       >
-        <AngleLeftIcon className="flex-shrink-0 w-4 h-4" fill="currentColor" />
+        <AngleLeftIcon className="h-4 w-4 flex-shrink-0" fill="currentColor" />
 
         {canGoBack && (
           <Tooltip noArrow id="go-back" place="bottom">
@@ -76,7 +76,7 @@ export default function TopBarNavigation({ className }: Props) {
         variant="dark"
         onClick={handleGoForward}
       >
-        <AngleRightIcon className="flex-shrink-0 w-4 h-4" fill="currentColor" />
+        <AngleRightIcon className="h-4 w-4 flex-shrink-0" fill="currentColor" />
 
         {canGoForward && (
           <Tooltip noArrow id="go-forward" place="bottom">

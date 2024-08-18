@@ -1,6 +1,0 @@
-.vscode
-*.html
-dist
-node_modules
-public
-*.config.js

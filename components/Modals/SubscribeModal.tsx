@@ -97,7 +97,7 @@ export default function SubscribeModal({ open, title, description, products, onC
 
   return (
     <Modal open={open} onOpenChange={handleOnOpenChange}>
-      <Modal.Content className="p-0 max-h-full">
+      <Modal.Content className="max-h-full p-0">
         <OverlayScrollbars
           defer
           className="p-6 md:max-h-[95vh]"

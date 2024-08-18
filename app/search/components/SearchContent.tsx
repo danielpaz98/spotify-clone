@@ -20,7 +20,7 @@ export default function SearchContent({ songs }: PageContentProps) {
   const onPlay = useOnPlay({ songs });
 
   if (songs?.length === 0) {
-    return <div className="flex flex-col gap-y-2 w-full text-neutral-400">No songs found.</div>;
+    return <div className="flex w-full flex-col gap-y-2 text-neutral-400">No songs found.</div>;
   }
 
   const handleOnPlay = ({ song }: { song: Song }) => {
@@ -30,18 +30,18 @@ export default function SearchContent({ songs }: PageContentProps) {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(19.5rem,1fr))] 2xl:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,minmax(19.5rem,1fr))] 2xl:grid-cols-4">
       {songs?.map((song) => {
         const isPlaying = playing && currentMusic?.song?.id === song.id;
 
         return (
-          <SongCard key={song.id} className="gap-5 items-start p-5">
-            <div className="w-full flex justify-between">
+          <SongCard key={song.id} className="items-start gap-5 p-5">
+            <div className="flex w-full justify-between">
               <SongCard.Image className="w-[92px] rounded-full" imagePath={song.image_path} />
               {session && (
                 <LikeButton
                   key={song?.liked as unknown as string}
-                  className="self-start w-6 h-6"
+                  className="h-6 w-6 self-start"
                   isLiked={song.liked}
                   songId={song.id}
                 />
@@ -55,8 +55,8 @@ export default function SearchContent({ songs }: PageContentProps) {
 
             <div
               className={cn(
-                "absolute bottom-5 right-5 opacity-0 z-[2] rounded-full transition duration-3s translate-y-2 shadow-[0_8px_8px_rgb(0,0,0,0.3)] group-hover:opacity-100 group-hover:translate-y-0",
-                { "opacity-100 translate-y-100": isPlaying },
+                "absolute bottom-5 right-5 z-[2] translate-y-2 rounded-full opacity-0 shadow-[0_8px_8px_rgb(0,0,0,0.3)] transition duration-3s group-hover:translate-y-0 group-hover:opacity-100",
+                { "translate-y-100 opacity-100": isPlaying },
               )}
             >
               <SongCard.PlayButton isPlaying={isPlaying} onClick={() => handleOnPlay({ song })} />

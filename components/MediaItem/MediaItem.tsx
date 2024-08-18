@@ -13,6 +13,7 @@ export default function MediaItem({ className, children, active, onClick, ...res
   );
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <article className={classNames} onClick={onClick} {...restProps}>
       {children}
     </article>

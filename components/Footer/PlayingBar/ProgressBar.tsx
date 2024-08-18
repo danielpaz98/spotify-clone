@@ -16,7 +16,7 @@ const ProgressBar = forwardRef<
         <Slider.Range className="group-hover:bg-brand/80" />
       </Slider.Track>
 
-      <Slider.Thumb className="cursor-pointer h-3 w-3 bg-white shadow-[0_2px_4px_0_rgba(0,0,0,.5)] invisible group-hover:visible border-none focus-visible:ring-0" />
+      <Slider.Thumb className="invisible h-3 w-3 cursor-pointer border-none bg-white shadow-[0_2px_4px_0_rgba(0,0,0,.5)] focus-visible:ring-0 group-hover:visible" />
     </Slider>
   );
 });

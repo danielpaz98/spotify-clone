@@ -47,6 +47,7 @@ const Header = forwardRef<React.ElementRef<"header">, Props>(({ className, user,
       <>
         {searchPageIsActive && (
           <SearchBar
+            // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus
             autoCapitalize="off"
             autoCorrect="off"
@@ -71,19 +72,19 @@ const Header = forwardRef<React.ElementRef<"header">, Props>(({ className, user,
               type="button"
               variant="dark"
             >
-              <CircleDownIcon className="w-4 h-4" fill="currentColor" />
+              <CircleDownIcon className="h-4 w-4" fill="currentColor" />
               <span>Install App</span>
             </Button>
 
             <Button
               rounded
-              className="flex-shrink-0 relative w-8 h-8 text-neutral-400 hover:text-white hover:scale-110"
+              className="relative h-8 w-8 flex-shrink-0 text-neutral-400 hover:scale-110 hover:text-white"
               data-tooltip-id="notifications-tooltip"
               size="sm"
               type="button"
               variant="dark"
             >
-              <BellIcon className="flex-shrink-0 w-4 h-4" fill="currentColor" />
+              <BellIcon className="h-4 w-4 flex-shrink-0" fill="currentColor" />
 
               <Tooltip noArrow id="notifications-tooltip" place="bottom">
                 <span>What&#39;s New</span>

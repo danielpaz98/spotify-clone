@@ -64,16 +64,16 @@ export default function Library({ className, libraryData, ...restProps }: Props)
 
   return (
     <div className={classNames} {...restProps}>
-      <header className={cn("font-bold py-2 px-4", { "shadow-[0_6px_10px_rgb(0,0,0,0.6)]": scrollY > 0 })}>
+      <header className={cn("px-4 py-2 font-bold", { "shadow-[0_6px_10px_rgb(0,0,0,0.6)]": scrollY > 0 })}>
         <div className="flex items-center gap-2">
-          <div className="flex gap-1 mr-auto">
+          <div className="mr-auto flex gap-1">
             <button
               aria-label="Collapse Your Library"
-              className="flex items-center gap-3 py-1 px-2 h-10 flex-shrink-0 text-neutral-400 hover:text-white transition-[color] ease-linear duration-2s"
+              className="flex h-10 flex-shrink-0 items-center gap-3 px-2 py-1 text-neutral-400 transition-[color] duration-2s ease-linear hover:text-white"
               data-tooltip-id="library-tooltip"
               onClick={() => session && setExpaded(!expanded)}
             >
-              <LibraryIcon className="w-6 h-6" fill="currentColor" />
+              <LibraryIcon className="h-6 w-6" fill="currentColor" />
               {expanded && <span>Your Library</span>}
             </button>
 
@@ -88,13 +88,13 @@ export default function Library({ className, libraryData, ...restProps }: Props)
                 <Button
                   rounded
                   aria-label="Add new song"
-                  className="p-2 hover:bg-wood-smoke enabled:hover:transform-none active:bg-black duration-2s"
+                  className="p-2 duration-2s hover:bg-wood-smoke active:bg-black enabled:hover:transform-none"
                   data-tooltip-id="create-playlist-tooltip"
                   id="info-tooltip"
                   size="sm"
                   onClick={handleAddNewSong}
                 >
-                  <PlusIcon className="w-4 h-4" fill="currentColor" />
+                  <PlusIcon className="h-4 w-4" fill="currentColor" />
                 </Button>
 
                 <Tooltip
@@ -140,14 +140,14 @@ export default function Library({ className, libraryData, ...restProps }: Props)
                 <Button
                   rounded
                   aria-label={showMore ? "Enlarge Your Library" : "Reduce Your Library"}
-                  className="hidden p-2 duration-2s hover:bg-wood-smoke enabled:hover:transform-none active:bg-black lg:block"
+                  className="hidden p-2 duration-2s hover:bg-wood-smoke active:bg-black enabled:hover:transform-none lg:block"
                   data-tooltip-id="show-more-tooltip"
                   size="sm"
                 >
                   {!showMore ? (
-                    <ArrowRightIcon className="w-4 h-4" fill="currentColor" />
+                    <ArrowRightIcon className="h-4 w-4" fill="currentColor" />
                   ) : (
-                    <ArrowLeftIcon className="w-4 h-4" fill="currentColor" />
+                    <ArrowLeftIcon className="h-4 w-4" fill="currentColor" />
                   )}
 
                   <Tooltip noArrow id="show-more-tooltip" place="top">
@@ -167,17 +167,17 @@ export default function Library({ className, libraryData, ...restProps }: Props)
       >
         <section className={cn("flex flex-col gap-2", expanded ? "p-2" : "p-1")}>
           {session ? (
-            <ul aria-label="Your Library" role="list" tabIndex={0}>
+            <ul aria-label="Your Library">
               {!libraryData ? (
                 Array.from({ length: 8 }, (_, i) => (
-                  <li key={i} role="listitem">
+                  <li key={i}>
                     <MediaItemSkeleton />
                   </li>
                 ))
               ) : (
                 <>
                   {libraryData.liked_songs > 0 && (
-                    <li role="listitem">
+                    <li>
                       <Link href="/liked">
                         <MediaItem active={pathname === "/liked"}>
                           <MediaItem.Image
@@ -188,10 +188,10 @@ export default function Library({ className, libraryData, ...restProps }: Props)
                           />
 
                           {expanded && (
-                            <div className="flex flex-col flex-1 gap-y-1 overflow-hidden">
+                            <div className="flex flex-1 flex-col gap-y-1 overflow-hidden">
                               <MediaItem.Title>Liked Songs</MediaItem.Title>
                               <MediaItem.Author>
-                                <ThumbTackIcon className="inline-block align-text-top mr-2 fill-brand w-3 h-3" />
+                                <ThumbTackIcon className="mr-2 inline-block h-3 w-3 fill-brand align-text-top" />
                                 <span>
                                   Playlist{" • "}
                                   {`${libraryData.liked_songs} ${
@@ -207,12 +207,12 @@ export default function Library({ className, libraryData, ...restProps }: Props)
                   )}
 
                   {libraryData?.songs?.map((song) => (
-                    <li key={song.id} role="listitem">
+                    <li key={song.id}>
                       <MediaItem onClick={() => onPlay({ song })}>
                         <MediaItem.Image alt={song.title} imagePath={song.image_path} />
 
                         {expanded && (
-                          <div className="flex flex-col flex-1 gap-y-1 overflow-hidden">
+                          <div className="flex flex-1 flex-col gap-y-1 overflow-hidden">
                             <MediaItem.Title>{song.title}</MediaItem.Title>
                             <MediaItem.Author>{song.author}</MediaItem.Author>
                           </div>
@@ -239,7 +239,7 @@ export default function Library({ className, libraryData, ...restProps }: Props)
                 </Popover.Anchor>
 
                 <Popover.Content
-                  className="bg-transparent p-0 rounded-lg min-w-[332px]"
+                  className="min-w-[332px] rounded-lg bg-transparent p-0"
                   data-side="bottom"
                   side={mdBreakpoint ? "right" : "bottom"}
                   sticky="always"
@@ -247,10 +247,10 @@ export default function Library({ className, libraryData, ...restProps }: Props)
                     if (!createPlaylist?.current?.contains(e?.target as Node)) setLoginPopoverOpen(false);
                   }}
                 >
-                  <Card className="bg-info w-full p-4 max-w-[336px]">
+                  <Card className="w-full max-w-[336px] bg-info p-4">
                     <Card.Title className="mb-2">Add a song</Card.Title>
                     <Card.Description>Log in to add your songs.</Card.Description>
-                    <Card.Content className="flex justify-end mt-6">
+                    <Card.Content className="mt-6 flex justify-end">
                       <Button rounded size="sm" type="button" onClick={() => setLoginPopoverOpen(false)}>
                         Not now
                       </Button>
@@ -270,7 +270,7 @@ export default function Library({ className, libraryData, ...restProps }: Props)
                     </Card.Content>
                   </Card>
 
-                  <Popover.Arrow className="fill-info w-[14px] h-[6px]" />
+                  <Popover.Arrow className="h-[6px] w-[14px] fill-info" />
                 </Popover.Content>
               </Popover>
 

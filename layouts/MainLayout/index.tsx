@@ -48,7 +48,7 @@ export default function MainLayout({ children, className, libraryData }: Props) 
         <div className="layout-container" {...handlers}>
           <Sidebar libraryData={libraryData} />
 
-          <div className="relative bg-cod-gray flex flex-col min-h-0 w-full overflow-hidden md:rounded-lg">
+          <div className="relative flex min-h-0 w-full flex-col overflow-hidden bg-cod-gray md:rounded-lg">
             <Header ref={value.headerRef} aria-label="Top bar and user menu" user={session?.user} />
 
             <OverlayScrollbars

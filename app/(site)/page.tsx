@@ -19,14 +19,14 @@ export default async function HomePage() {
     <main aria-label={`${layoutMetadata.title.default} - ${metadata.title}`}>
       <PageHeader />
 
-      <div className="absolute z-[-1] h-[332px] -mt-[var(--header-height)*2] w-full bg-fuscous-gray bg-main-noise-gradient transition-[background-color] duration-1s" />
+      <div className="absolute z-[-1] -mt-[var(--header-height)*2] h-[332px] w-full bg-fuscous-gray bg-main-noise-gradient transition-[background-color] duration-1s" />
 
       <section id="homePage">
-        <div className="pt-2 flex flex-col bg-transparent">
-          <div className="flex flex-col gap-6 max-width-[var(--content-max-width)] px-6">
-            <section aria-label="Newest songs" className="relative flex flex-col flex-1 mb-4">
-              <div className="flex justify-between items-center">
-                <h2 className="flex-1 text-white text-2xl tracking-tighter leading-normal font-bold line-clamp-1">
+        <div className="flex flex-col bg-transparent pt-2">
+          <div className="max-width-[var(--content-max-width)] flex flex-col gap-6 px-6">
+            <section aria-label="Newest songs" className="relative mb-4 flex flex-1 flex-col">
+              <div className="flex items-center justify-between">
+                <h2 className="line-clamp-1 flex-1 text-2xl font-bold leading-normal tracking-tighter text-white">
                   Newest songs
                 </h2>
               </div>

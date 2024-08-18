@@ -75,22 +75,22 @@ export default function PlayerContent({ songUrl }: Props) {
   }, [song, paused]);
 
   return (
-    <div className="flex justify-between items-center h-[72px]">
-      <div className="flex w-[45%] sm:w-[30%] min-w-[180px] justify-start">
-        <div className="flex gap-4 items-center">
-          <MediaItem className="p-0 pl-2 cursor-text hover:bg-transparent">
+    <div className="flex h-[72px] items-center justify-between">
+      <div className="flex w-[45%] min-w-[180px] justify-start sm:w-[30%]">
+        <div className="flex items-center gap-4">
+          <MediaItem className="cursor-text p-0 pl-2 hover:bg-transparent">
             <MediaItem.Image
               alt={song?.title}
-              className="z-[2] w-14 h-14 rounded-[4px] cursor-default shadow-[0_0_10px_rgba(0,0,0,.3)]"
+              className="z-[2] h-14 w-14 cursor-default rounded-[4px] shadow-[0_0_10px_rgba(0,0,0,.3)]"
               imagePath={song?.image_path}
               imagePlaceholder={null}
             >
-              <span className="absolute top-[35%] bottom-[35%] left-[35%] right-[35%]">
-                <MusicIcon className="fill-white w-full h-full" />
+              <span className="absolute bottom-[35%] left-[35%] right-[35%] top-[35%]">
+                <MusicIcon className="h-full w-full fill-white" />
               </span>
             </MediaItem.Image>
 
-            <div className="flex flex-col flex-1 mx-1 max-md:gap-y-1 overflow-hidden">
+            <div className="mx-1 flex flex-1 flex-col overflow-hidden max-md:gap-y-1">
               <MediaItem.Title className="text-[13px] md:text-sm">{song?.title}</MediaItem.Title>
               <MediaItem.Author className="text-[11px] md:text-xs">{song?.author}</MediaItem.Author>
             </div>
@@ -98,7 +98,7 @@ export default function PlayerContent({ songUrl }: Props) {
 
           <LikeButton
             key={song?.liked as unknown as string}
-            className="inline-flex items-center translate-x-[-8px]"
+            className="inline-flex translate-x-[-8px] items-center"
             isLiked={song?.liked}
             songId={song?.id as string}
           />
@@ -106,9 +106,9 @@ export default function PlayerContent({ songUrl }: Props) {
       </div>
 
       <div className="max-w-[722px] flex-1 sm:w-[40%]">
-        <div aria-label="Player controls" className="flex flex-col justify-center items-center">
-          <div className="flex gap-4 mb-2 w-full">
-            <div className="flex flex-1 gap-4 xs:gap-2 justify-end">
+        <div aria-label="Player controls" className="flex flex-col items-center justify-center">
+          <div className="mb-2 flex w-full gap-4">
+            <div className="flex flex-1 justify-end gap-4 xs:gap-2">
               <Button
                 aria-label="Enable shuffle"
                 className={cn(btnClassNames, "max-xs:w-auto", shuffled && statusClassNames)}
@@ -117,7 +117,7 @@ export default function PlayerContent({ songUrl }: Props) {
                 type="button"
                 onClick={() => shuffle(!shuffled)}
               >
-                <ShuffleIcon className="w-4 h-4" fill="currentColor" />
+                <ShuffleIcon className="h-4 w-4" fill="currentColor" />
               </Button>
 
               <Button
@@ -127,7 +127,7 @@ export default function PlayerContent({ songUrl }: Props) {
                 type="button"
                 onClick={playPrevious}
               >
-                <BackWardStepIcon className="w-4 h-4" fill="currentColor" />
+                <BackWardStepIcon className="h-4 w-4" fill="currentColor" />
               </Button>
             </div>
 
@@ -141,13 +141,13 @@ export default function PlayerContent({ songUrl }: Props) {
               onClick={togglePlayPause}
             >
               {playing ? (
-                <PauseIcon className="w-4 h-4" fill="currentColor" />
+                <PauseIcon className="h-4 w-4" fill="currentColor" />
               ) : (
-                <PlayIcon className="w-4 h-4" fill="currentColor" />
+                <PlayIcon className="h-4 w-4" fill="currentColor" />
               )}
             </Button>
 
-            <div className="flex flex-1 gap-4 xs:gap-2 justify-start">
+            <div className="flex flex-1 justify-start gap-4 xs:gap-2">
               <Button
                 aria-label="Next"
                 className={cn(btnClassNames, "max-xs:w-auto")}
@@ -155,7 +155,7 @@ export default function PlayerContent({ songUrl }: Props) {
                 type="button"
                 onClick={playNext}
               >
-                <ForwardStepIcon className="w-4 h-4" fill="currentColor" />
+                <ForwardStepIcon className="h-4 w-4" fill="currentColor" />
               </Button>
 
               <Button
@@ -167,9 +167,9 @@ export default function PlayerContent({ songUrl }: Props) {
                 onClick={() => loop(!looping)}
               >
                 {looping ? (
-                  <Repeat1Icon className="w-4 h-4" fill="currentColor" />
+                  <Repeat1Icon className="h-4 w-4" fill="currentColor" />
                 ) : (
-                  <RepeatIcon className="w-4 h-4" fill="currentColor" />
+                  <RepeatIcon className="h-4 w-4" fill="currentColor" />
                 )}
               </Button>
             </div>
@@ -179,8 +179,8 @@ export default function PlayerContent({ songUrl }: Props) {
         </div>
       </div>
 
-      <div className="hidden min-[180px] w-1/5 md:w-[30%] justify-center sm:flex">
-        <VolumeControl className="md:w-[50%] px-2" />
+      <div className="min-[180px] hidden w-1/5 justify-center sm:flex md:w-[30%]">
+        <VolumeControl className="px-2 md:w-[50%]" />
       </div>
     </div>
   );

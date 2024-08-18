@@ -71,7 +71,6 @@ export function getTransitionProps(props: ComponentProps): TransitionPropsReturn
 export const reflow = (node: Element): void => {
   // We have to do something with node.scrollTop.
   // Otherwise it's removed from the compiled code by optimisers
-  // eslint-disable-next-line no-self-assign
   node.scrollTop = node.scrollTop;
 };
 

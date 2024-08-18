@@ -71,5 +71,6 @@ module.exports = {
       },
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("@mertasan/tailwindcss-variables"), require("tailwindcss-animate")],
 } satisfies Config;

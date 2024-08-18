@@ -23,7 +23,7 @@ const ModalContent = forwardRef<
 
       <Content ref={ref} className={classNames} {...restProps}>
         {children}
-        <Close className="text-neutral-400 hover:text-white absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full focus:outline-none disabled:pointer-events-none">
+        <Close className="absolute right-[10px] top-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full text-neutral-400 hover:text-white focus:outline-none disabled:pointer-events-none">
           <Cross2Icon className="h-4 w-4" fill="currentColor" />
           <span className="sr-only">Close</span>
         </Close>

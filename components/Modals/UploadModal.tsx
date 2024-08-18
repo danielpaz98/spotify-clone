@@ -112,7 +112,7 @@ export default function UploadModal({ open, title, description, onClose }: Props
 
       setIsLoading(false);
       onClose?.();
-    } catch (error) {
+    } catch {
       enqueueSnackbar("Something went wrong", { variant: "error" });
     } finally {
       setIsLoading(false);
@@ -121,10 +121,10 @@ export default function UploadModal({ open, title, description, onClose }: Props
 
   return (
     <Modal open={open} onOpenChange={handleOnOpenChange}>
-      <Modal.Content className="p-0 max-h-full">
+      <Modal.Content className="max-h-full p-0">
         <OverlayScrollbars
           defer
-          className="py-4 px-3 xs:py-6 xs:px-6 md:max-h-[95vh]"
+          className="px-3 py-4 xs:px-6 xs:py-6 md:max-h-[95vh]"
           options={{ scrollbars: { autoHide: "leave", autoHideDelay: 1000 } }}
         >
           {title !== null && description !== null && (

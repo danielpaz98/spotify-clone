@@ -25,19 +25,20 @@ export default async function SearchPage({ searchParams }: Props) {
       <PageHeader opacity={1} />
 
       <section id="searchPage">
-        <div className="flex flex-col gap-6 max-width-[var(--content-max-width)] p-6">
-          <section aria-label="Top result" className="relative flex flex-col mb-4">
+        <div className="max-width-[var(--content-max-width)] flex flex-col gap-6 p-6">
+          <section aria-label="Top result" className="relative mb-4 flex flex-col">
             <SearchBar
+              // eslint-disable-next-line jsx-a11y/no-autofocus
               autoFocus
               autoCapitalize="off"
               autoCorrect="off"
-              className="mb-4 max-w-full block xs:hidden"
+              className="mb-4 block max-w-full xs:hidden"
               maxLength={800}
               placeholder="What do you want to play?"
             />
 
-            <div className="flex justify-between items-center mb-2">
-              <h2 className="flex-1 text-white text-2xl tracking-[-0.04em] leading-normal font-bold line-clamp-1">
+            <div className="mb-2 flex items-center justify-between">
+              <h2 className="line-clamp-1 flex-1 text-2xl font-bold leading-normal tracking-[-0.04em] text-white">
                 {title}
               </h2>
             </div>

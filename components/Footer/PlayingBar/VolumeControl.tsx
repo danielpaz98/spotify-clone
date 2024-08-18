@@ -58,14 +58,14 @@ export default function VolumeControl({ className }: Props) {
       <Button
         aria-describedby="volume-icon"
         aria-label={ariaLabel}
-        className="relative flex-shrink-0 p-0 w-8 h-8 text-neutral-400 hover:text-white"
+        className="relative h-8 w-8 flex-shrink-0 p-0 text-neutral-400 hover:text-white"
         data-tooltip-id="btn-volume-icon"
         size="sm"
         type="button"
         onClick={toggleMute}
       >
         <VolumeIcon
-          className="cursor-pointer flex-shrink-0 w-4 h-4"
+          className="h-4 w-4 flex-shrink-0 cursor-pointer"
           fill="currentColor"
           id="volume-icon"
           volume={volume}

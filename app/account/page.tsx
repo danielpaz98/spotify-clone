@@ -15,9 +15,9 @@ export default function AccountPage() {
     <main aria-label={`${layoutMetadata.title.default} - ${metadata.title}`}>
       <PageHeader opacity={1} />
 
-      <section className="flex flex-col gap-6 max-w-4xl mx-auto p-8 pb-4" id="accountPage">
+      <section className="mx-auto flex max-w-4xl flex-col gap-6 p-8 pb-4" id="accountPage">
         <div className="flex items-center">
-          <h1 className="flex-1 text-white text-[2rem] tracking-[-0.04em] leading-none font-bold line-clamp-1 mb-4">
+          <h1 className="mb-4 line-clamp-1 flex-1 text-[2rem] font-bold leading-none tracking-[-0.04em] text-white">
             Account Settings
           </h1>
         </div>

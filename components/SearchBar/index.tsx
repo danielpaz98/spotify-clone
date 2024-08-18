@@ -86,16 +86,16 @@ const SearchBar = forwardRef<React.ElementRef<typeof Input>, Props>(
 
         <div className={iconContainerClassNames}>
           <button
-            className="cursor-default pointer-events-auto"
+            className="pointer-events-auto cursor-default"
             type="button"
             onClick={() => inputRef?.current?.focus()}
           >
-            {searchIcon ? searchIcon : <SearchIcon className={cn(iconClassNames, "w-[17.5px] h-[17.5px]")} />}
+            {searchIcon ? searchIcon : <SearchIcon className={cn(iconClassNames, "h-[17.5px] w-[17.5px]")} />}
           </button>
 
           {searchValue !== "" && (
-            <button className="cursor-default pointer-events-auto" type="button" onClick={handleOnClear}>
-              {clearIcon ? clearIcon : <XMarkIcon className={cn(iconClassNames, "w-4 h-4")} />}
+            <button className="pointer-events-auto cursor-default" type="button" onClick={handleOnClear}>
+              {clearIcon ? clearIcon : <XMarkIcon className={cn(iconClassNames, "h-4 w-4")} />}
             </button>
           )}
         </div>

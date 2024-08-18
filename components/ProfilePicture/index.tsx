@@ -15,8 +15,8 @@ export default function ProfilePicture({ className, style, user, ...restProps }:
 
   if (image) {
     return (
-      <figure className="w-6 h-6" title={username}>
-        <picture className="relative block w-full h-full rounded-full overflow-hidden">
+      <figure className="h-6 w-6" title={username}>
+        <picture className="relative block h-full w-full overflow-hidden rounded-full">
           <Image
             fill
             priority

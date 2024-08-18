@@ -26,9 +26,9 @@ export default function SideMenuItem({
   const Icon = isActive ? (Icon2 ? Icon2 : Icon1) : Icon1;
 
   return (
-    <li className="py-1 px-3 text-gray-70 font-bold hover:text-white transition-colors duration-2s">
+    <li className="px-3 py-1 font-bold text-gray-70 transition-colors duration-2s hover:text-white">
       <Link className={classNames} href={href} {...restProps}>
-        {Icon1 !== undefined && Icon !== undefined && <Icon className="w-6 h-6" fill="currentColor" />}
+        {Icon1 !== undefined && Icon !== undefined && <Icon className="h-6 w-6" fill="currentColor" />}
         {children}
       </Link>
     </li>

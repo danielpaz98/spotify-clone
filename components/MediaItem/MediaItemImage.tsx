@@ -37,7 +37,7 @@ export default function MediaItemImage({
           fill
           priority
           alt={alt || "Image"}
-          className="object-cover object-center z-[1]"
+          className="z-[1] object-cover object-center"
           sizes="64px"
           src={imageSrc}
         />
